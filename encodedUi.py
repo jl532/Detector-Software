@@ -61,6 +61,10 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName("lineEdit")
         self.verticalLayout.addWidget(self.lineEdit)
 
+        self.liveStreamButton = QtWidgets.QPushButton(self.centralwidget)
+        self.liveStreamButton.setObjectName("liveStreamButton")
+        self.verticalLayout.addWidget(self.liveStreamButton)
+        
         self.readImgButton = QtWidgets.QPushButton(self.centralwidget)
         self.readImgButton.setObjectName("readImgButton")
         self.verticalLayout.addWidget(self.readImgButton)
@@ -106,6 +110,8 @@ class Ui_MainWindow(object):
             "", "D4Scope Camera Software", None, -1))
         self.readImgButton.setText(QtWidgets.QApplication.translate(
             "", "Capture Image", None, -1))
+        self.liveStreamButton.setText(QtWidgets.QApplication.translate(
+            "", "Live Stream from camera to viewfind!", None, -1))
         self.analyzeImgButton.setText(QtWidgets.QApplication.translate(
             "", "Analyze Image", None, -1))
         self.topDialogBox.setText(QtWidgets.QApplication.translate(

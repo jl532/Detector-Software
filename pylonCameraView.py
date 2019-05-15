@@ -80,16 +80,17 @@ def singleCapture(gain, exposure, digitalShift, bitDepth):
         frame = converter.Convert(buffer)
         frame_arr = frame.GetArray()
         # Open window for feed and present frame
-        cv2.namedWindow("Snapshot (" + camera.GetDeviceInfo().GetModelName() + ")", cv2.WINDOW_NORMAL)
-        cv2.imshow("Snapshot (" + camera.GetDeviceInfo().GetModelName() + ")", frame_arr)
-        cv2.waitKey(0)
+#        cv2.namedWindow("Snapshot (" + camera.GetDeviceInfo().GetModelName() + ")", cv2.WINDOW_NORMAL)
+#        cv2.imshow("Snapshot (" + camera.GetDeviceInfo().GetModelName() + ")", frame_arr)
+#        cv2.waitKey(0)
     buffer.Release()
 
     # Close procedure
     camera.Close()
     cv2.destroyAllWindows()
+    return frame_arr
 
 # - - - - 
-singleCapture(12, 1e4, 4, "Mono12p")
-liveView(12, 1e4, 4, "Mono12p")
+#singleCapture(12, 1e4, 4, "Mono12p")
+#liveView(12, 1e4, 4, "Mono12p")
 
