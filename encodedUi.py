@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
 
         # Main window init/size
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(1000, 800)
 
         # Various button and plotting widgets
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -45,41 +45,33 @@ class Ui_MainWindow(object):
         self.plotting_widget.setObjectName("plotting_widget")
         self.verticalLayout.addWidget(self.plotting_widget)
 
-        self.fileName = QtWidgets.QLabel(self.centralwidget)
-        self.fileName.setObjectName("fileName")
-        self.fileName.setAlignment(QtCore.Qt.AlignCenter)
-        self.fileName.setMaximumHeight(20)
-        self.verticalLayout.addWidget(self.fileName)
+        self.topDialogBox = QtWidgets.QLabel(self.centralwidget)
+        self.topDialogBox.setObjectName("topDialogBox")
+        self.topDialogBox.setAlignment(QtCore.Qt.AlignCenter)
+        self.topDialogBox.setMaximumHeight(20)
+        self.verticalLayout.addWidget(self.topDialogBox)
 
-        self.serverResponse = QtWidgets.QLabel(self.centralwidget)
-        self.serverResponse.setObjectName("serverResponse")
-        self.serverResponse.setAlignment(QtCore.Qt.AlignCenter)
-        self.serverResponse.setMaximumHeight(45)
-        self.verticalLayout.addWidget(self.serverResponse)
+        self.bottomDialogBox = QtWidgets.QLabel(self.centralwidget)
+        self.bottomDialogBox.setObjectName("bottomDialogBox")
+        self.bottomDialogBox.setAlignment(QtCore.Qt.AlignCenter)
+        self.bottomDialogBox.setMaximumHeight(45)
+        self.verticalLayout.addWidget(self.bottomDialogBox)
 
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName("lineEdit")
         self.verticalLayout.addWidget(self.lineEdit)
 
-        self.submitQuery = QtWidgets.QPushButton(self.centralwidget)
-        self.submitQuery.setObjectName("submitQuery")
-        self.verticalLayout.addWidget(self.submitQuery)
-
         self.readImgButton = QtWidgets.QPushButton(self.centralwidget)
         self.readImgButton.setObjectName("readImgButton")
         self.verticalLayout.addWidget(self.readImgButton)
+        
+        self.analyzeImgButton = QtWidgets.QPushButton(self.centralwidget)
+        self.analyzeImgButton.setObjectName("analyzeImgButton")
+        self.verticalLayout.addWidget(self.analyzeImgButton)
 
-        self.uploadImgButton = QtWidgets.QPushButton(self.centralwidget)
-        self.uploadImgButton.setObjectName("uploadImgButton")
-        self.verticalLayout.addWidget(self.uploadImgButton)
-
-        self.testServerButton = QtWidgets.QPushButton(self.centralwidget)
-        self.testServerButton.setObjectName("testServerButton")
-        self.verticalLayout.addWidget(self.testServerButton)
-
-        self.pullAllData = QtWidgets.QPushButton(self.centralwidget)
-        self.pullAllData.setObjectName("pullAllData")
-        self.verticalLayout.addWidget(self.pullAllData)
+        self.saveImgButton = QtWidgets.QPushButton(self.centralwidget)
+        self.saveImgButton.setObjectName("saveImgButton")
+        self.verticalLayout.addWidget(self.saveImgButton)
 
         self.horizontalLayout.addLayout(self.verticalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -111,16 +103,12 @@ class Ui_MainWindow(object):
 
         """
         MainWindow.setWindowTitle(QtWidgets.QApplication.translate(
-            "", "MainWindow", None, -1))
+            "", "D4Scope Camera Software", None, -1))
         self.readImgButton.setText(QtWidgets.QApplication.translate(
-            "", "Open Image", None, -1))
-        self.uploadImgButton.setText(QtWidgets.QApplication.translate(
-            "", "Upload Image to Server", None, -1))
-        self.fileName.setText(QtWidgets.QApplication.translate(
-            "", "Press 'Open Image' button'", None, -1))
-        self.pullAllData.setText(QtWidgets.QApplication.translate(
-            "", "Pull Data to outputData.csv", None, -1))
-        self.submitQuery.setText(QtWidgets.QApplication.translate(
-            "", "View entered filename from server", None, -1))
-        self.testServerButton.setText(
-            QtWidgets.QApplication.translate("", "Test Server!", None, -1))
+            "", "Capture Image", None, -1))
+        self.analyzeImgButton.setText(QtWidgets.QApplication.translate(
+            "", "Analyze Image", None, -1))
+        self.topDialogBox.setText(QtWidgets.QApplication.translate(
+            "", "Press 'Capture Image' button", None, -1))
+        self.saveImgButton.setText(QtWidgets.QApplication.translate(
+            "", "Save Image", None, -1))
